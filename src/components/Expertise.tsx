@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import {
   BeakerIcon,
-  ChartBarIcon,
   CpuChipIcon,
   LightBulbIcon,
   CommandLineIcon,
@@ -92,7 +91,7 @@ export default function Expertise() {
           animate={inView ? "visible" : "hidden"}
           className="mt-20 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4"
         >
-          {services.map((service, index) => (
+          {services.map((service) => (
             <motion.div
               key={service.title}
               variants={itemVariants}

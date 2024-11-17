@@ -55,7 +55,7 @@ export default function About() {
               { number: '50+', label: 'AI Solutions Delivered' },
               { number: '30+', label: 'Industry Experts' },
               { number: '24/7', label: 'Support & Maintenance' },
-            ].map((stat, index) => (
+            ].map((stat) => (
               <div
                 key={stat.label}
                 className="relative group"

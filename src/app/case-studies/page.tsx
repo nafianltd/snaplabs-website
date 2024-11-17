@@ -14,7 +14,7 @@ export default function CaseStudies() {
           <div className="bg-white/5 rounded-lg p-6 backdrop-blur-sm">
             <h2 className="text-2xl font-semibold mb-4">Coming Soon</h2>
             <p className="text-gray-300">
-              We're currently preparing detailed case studies of our successful projects. 
+              We&apos;re currently preparing detailed case studies of our successful projects. 
               Check back soon to learn more about our work and impact.
             </p>
           </div>

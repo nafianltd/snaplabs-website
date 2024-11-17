@@ -6,7 +6,6 @@ import About from '@/components/About';
 import Expertise from '@/components/Expertise';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
-import ScrollAnimation from '@/components/ScrollAnimation';
 import CompanyCarousel from '@/components/CompanyCarousel';
 
 export default function Home() {

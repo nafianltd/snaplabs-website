@@ -5,10 +5,9 @@ import { useRef } from 'react';
 
 interface ScrollAnimationProps {
   children: React.ReactNode;
-  index?: number;
 }
 
-export default function ScrollAnimation({ children, index = 0 }: ScrollAnimationProps) {
+export default function ScrollAnimation({ children }: ScrollAnimationProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
