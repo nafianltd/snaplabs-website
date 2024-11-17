@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const chatUrl = process.env.NEXT_PUBLIC_CHAINLIT_URL || 'http://localhost:8000';
 
   return (
     <div className="fixed bottom-4 right-4 z-50">
@@ -49,9 +50,11 @@ const ChatWidget = () => {
       {isOpen && (
         <div className="absolute bottom-20 right-0 w-96 h-[600px] bg-white rounded-lg shadow-xl overflow-hidden">
           <iframe
-            src={process.env.NEXT_PUBLIC_CHAINLIT_URL || 'http://localhost:8000'}
+            src={chatUrl}
             className="w-full h-full border-0"
             title="Snap Labs Chat Assistant"
+            allow="microphone *; camera *; fullscreen *; clipboard-write"
+            sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-modals"
           />
         </div>
       )}
