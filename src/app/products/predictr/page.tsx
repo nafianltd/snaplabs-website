@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import FooterWithMap from '@/components/FooterWithMap';
 
 export default function Predictr() {
   return (
@@ -138,7 +138,9 @@ export default function Predictr() {
         </div>
       </div>
 
-      <Footer />
+      <div className="mt-24">
+        <FooterWithMap />
+      </div>
     </main>
   );
 }

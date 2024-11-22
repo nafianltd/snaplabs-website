@@ -1,8 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import FooterWithMap from '@/components/FooterWithMap';
 import Image from 'next/image';
 
 export default function Analytix() {
@@ -156,7 +157,9 @@ export default function Analytix() {
         </div>
       </div>
 
-      <Footer />
+      <div className="mt-24">
+        <FooterWithMap />
+      </div>
     </main>
   );
 }

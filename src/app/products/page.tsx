@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import FooterWithMap from '@/components/FooterWithMap';
 import { useRouter } from 'next/navigation';
 
 const products = [
@@ -188,7 +188,9 @@ export default function Products() {
         </div>
       </div>
 
-      <Footer />
+      <div className="mt-24">
+        <FooterWithMap />
+      </div>
     </main>
   );
 }

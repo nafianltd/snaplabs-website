@@ -1,7 +1,7 @@
 'use client';
 
 import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import FooterWithMap from '@/components/FooterWithMap';
 
 export default function CaseStudies() {
   return (
@@ -20,7 +20,9 @@ export default function CaseStudies() {
           </div>
         </div>
       </div>
-      <Footer />
+      <div className="mt-24">
+        <FooterWithMap />
+      </div>
     </main>
   );
 }
