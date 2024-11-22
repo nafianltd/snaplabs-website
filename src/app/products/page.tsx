@@ -112,7 +112,7 @@ export default function Products() {
                   <div className="mt-24">
                     <h3 className="text-2xl font-bold text-white text-center mb-12">Pricing Plans</h3>
                     <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                      {Object.entries(product.pricing).map(([_, plan]) => (
+                      {Object.values(product.pricing).map((plan) => (
                         <motion.div
                           key={plan.name}
                           whileHover={{ scale: 1.02 }}
