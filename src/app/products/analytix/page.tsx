@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import Navbar from '@/components/Navbar';
 import FooterWithMap from '@/components/FooterWithMap';
 import Image from 'next/image';

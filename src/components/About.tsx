@@ -34,7 +34,7 @@ export default function About() {
               </p>
               <p>
                 Our flagship products, Analytix and Predictr, represent the cutting edge of AI innovation. 
-                Analytix is an intelligent chatbot that can answer questions about your company's data, 
+                Analytix is an intelligent chatbot that can answer questions about your company&apos;s data, 
                 while Predictr is a no-code platform that makes predictive analytics simple and accessible.
               </p>
               <p>
