@@ -7,10 +7,9 @@ import { motion } from 'framer-motion';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const navItems = [
-  { name: 'Home', href: '/' },
-  { name: 'About', href: '#about' },
-  { name: 'Expertise', href: '#expertise' },
+  { name: 'About', href: '/#about' },
   { name: 'Case Studies', href: '/case-studies' },
+  { name: 'Products', href: '/products' },
 ];
 
 export default function Navbar() {

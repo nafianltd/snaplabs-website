@@ -1,7 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function Footer() {
+interface FooterProps {
+  onOpenMap: () => void;
+}
+
+export default function Footer({ onOpenMap }: FooterProps) {
   return (
     <footer className="bg-black/50 backdrop-blur-sm py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -62,10 +66,15 @@ export default function Footer() {
             <ul className="space-y-2 text-gray-300">
               <li>Email: info@snaplabs.ai</li>
               <li className="space-y-1">
-                <p className="font-medium pb-1 border-b border-gray-600/30 inline-block">Bristol Office</p>
-                <p>Snap Analytics</p>
-                <p>Runway East, 1 Victoria St</p>
-                <p>Redcliffe, Bristol BS1 6AA</p>
+                <div 
+                  onClick={onOpenMap}
+                  className="cursor-pointer hover:text-white transition-colors"
+                >
+                  <p className="font-medium pb-1 border-b border-gray-600/30 inline-block">Bristol Office</p>
+                  <p>Snap Analytics</p>
+                  <p>Runway East, 1 Victoria St</p>
+                  <p>Redcliffe, Bristol BS1 6AA</p>
+                </div>
               </li>
             </ul>
           </div>

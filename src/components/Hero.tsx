@@ -55,7 +55,7 @@ export default function Hero() {
           <span 
             className="block mt-2 bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent relative [filter:drop-shadow(0_0_4px_rgba(139,92,246,0.45))]"
           >
-            with AI Solutions
+            with AI-powered Solutions
           </span>
         </motion.h1>
 
@@ -63,8 +63,8 @@ export default function Hero() {
           className="mt-6 text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto"
           variants={itemVariants}
         >
-          Transform your business with cutting-edge artificial intelligence and expert consulting services.
-          We turn complex data into actionable insights.
+          Unlock the power of your data with our AI products. From intelligent chatbots to predictive analytics,
+          we provide the tools you need to make data-driven decisions.
         </motion.p>
 
         <motion.div
@@ -72,7 +72,7 @@ export default function Hero() {
           variants={itemVariants}
         >
           <motion.a
-            href="https://outlook.office365.com/book/SnapAnalytics1@snapanalytics.co.uk/"
+            href="/products"
             whileHover={{
               scale: 1.02,
             }}
@@ -84,19 +84,19 @@ export default function Hero() {
             className="relative px-8 py-3 rounded-lg bg-gradient-to-r from-indigo-600/80 to-purple-600/80 text-white font-medium border border-white/10 group overflow-hidden hover:shadow-[0_0_30px_-5px_rgba(139,92,246,0.5)] transition-all duration-300"
           >
             <span className="relative z-10 inline-flex items-center">
-              Get Started
+              Explore Products
               <svg className="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7 M16 5l7 7-7 7" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </span>
             <div className="absolute inset-0 -translate-x-full group-hover:translate-x-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 transition-transform duration-300 ease-out" />
           </motion.a>
-          <a
-            href="#expertise"
+          <motion.a
+            href="https://outlook.office365.com/book/SnapAnalytics1@snapanalytics.co.uk/"
             className="px-8 py-3 rounded-lg bg-white/10 text-white font-medium hover:bg-white/20 transition-all transform hover:scale-105 backdrop-blur-sm"
           >
-            Learn More
-          </a>
+            Book a Demo
+          </motion.a>
         </motion.div>
 
         {/* Floating elements */}
