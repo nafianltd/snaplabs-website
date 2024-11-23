@@ -31,7 +31,6 @@ export default function Contact() {
     setEmailError('');
     setSubscribeSuccess(true);
     setEmail('');
-    // Add your subscription logic here
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -166,7 +165,7 @@ export default function Contact() {
                 id="message"
                 rows={4}
                 required
-                placeholder="We&apos;re ready to help! Write your message here..."
+                placeholder="We&#39;re ready to help! Write your message here..."
                 className="mt-1 block w-full rounded-md bg-white/5 border border-white/10 text-white px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
@@ -181,7 +180,7 @@ export default function Contact() {
               </button>
               {formStatus === 'success' && (
                 <p className="mt-2 text-green-400 text-sm">
-                  Message sent successfully! We'll get back to you soon.
+                  Message sent successfully! We&#39;ll get back to you soon.
                 </p>
               )}
               {formStatus === 'error' && (
