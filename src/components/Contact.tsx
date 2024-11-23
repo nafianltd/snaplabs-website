@@ -166,7 +166,7 @@ export default function Contact() {
                 id="message"
                 rows={4}
                 required
-                placeholder="We're ready to help! Write your message here..."
+                placeholder="We&apos;re ready to help! Write your message here..."
                 className="mt-1 block w-full rounded-md bg-white/5 border border-white/10 text-white px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
             </div>

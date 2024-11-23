@@ -40,7 +40,7 @@ export async function POST(req: Request) {
     console.log('Attempting to send email to:', recipients);
 
     // Send email using Resend
-    const result = await resend.emails.send({
+    await resend.emails.send({
       from: 'Snap Labs <onboarding@resend.dev>',
       to: recipients,
       subject: `New Contact Form Submission from ${name}`,
