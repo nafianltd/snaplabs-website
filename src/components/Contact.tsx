@@ -14,6 +14,9 @@ export default function Contact() {
   const [emailError, setEmailError] = useState('');
   const [subscribeSuccess, setSubscribeSuccess] = useState(false);
 
+  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [formError, setFormError] = useState('');
+
   const validateEmail = (email: string) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
@@ -31,9 +34,58 @@ export default function Contact() {
     // Add your subscription logic here
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Add form submission logic here
+    setFormStatus('submitting');
+    setFormError('');
+
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const email = formData.get('email') as string;
+    const message = formData.get('message') as string;
+
+    // Validate required fields
+    if (!email || !message) {
+      setFormStatus('error');
+      setFormError('Email and message are required');
+      return;
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setFormStatus('error');
+      setFormError('Please enter a valid email address');
+      return;
+    }
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.get('name'),
+          email: formData.get('email'),
+          company: formData.get('company'),
+          message: formData.get('message'),
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message');
+      }
+
+      setFormStatus('success');
+      form.reset();
+    } catch (error) {
+      console.error('Contact form error:', error);
+      setFormStatus('error');
+      setFormError(error instanceof Error ? error.message : 'Failed to send message. Please try again.');
+    }
   };
 
   return (
@@ -87,6 +139,7 @@ export default function Contact() {
                   name="email"
                   id="contact-email"
                   required
+                  placeholder="your@email.com"
                   className="mt-1 block w-full rounded-md bg-white/5 border border-white/10 text-white px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
@@ -113,6 +166,7 @@ export default function Contact() {
                 id="message"
                 rows={4}
                 required
+                placeholder="We're ready to help! Write your message here..."
                 className="mt-1 block w-full rounded-md bg-white/5 border border-white/10 text-white px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
@@ -120,10 +174,21 @@ export default function Contact() {
             <div>
               <button
                 type="submit"
-                className="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-blue-500 text-white font-medium hover:from-blue-700 hover:to-blue-600 transition-all transform hover:scale-105"
+                disabled={formStatus === 'submitting'}
+                className="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-blue-500 text-white font-medium hover:from-blue-700 hover:to-blue-600 transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message
+                {formStatus === 'submitting' ? 'Sending...' : 'Send Message'}
               </button>
+              {formStatus === 'success' && (
+                <p className="mt-2 text-green-400 text-sm">
+                  Message sent successfully! We'll get back to you soon.
+                </p>
+              )}
+              {formStatus === 'error' && (
+                <p className="mt-2 text-red-400 text-sm">
+                  {formError}
+                </p>
+              )}
             </div>
           </motion.form>
 
